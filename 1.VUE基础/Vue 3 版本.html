@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue响应式实例</title>
+    <script src="../vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>计数：{{ count }}</p>
+      <button @click="increment">+1</button>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        data() {
+          return { count: 0 };
+        },
+        methods: {
+          increment() {
+            this.count++;
+          },
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

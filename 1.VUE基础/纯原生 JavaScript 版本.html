@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>纯原生 JavaScript 版本</title>
+</head>
+<body>
+<p id="counter">计数: 0</p>
+<button id="increment">+1</button>
+
+<script>
+    let count = 0;
+    const pEl = document.getElementById("counter");
+    const buttonEl = document.getElementById("increment");
+
+    function updateCounter() {
+        pEl.innerHTML = "计数: " + count;
+    }
+
+    buttonEl.addEventListener("click", () => {
+        count++;
+        updateCounter();
+    });
+    updateCounter();
+</script>
+</body>
+</html>

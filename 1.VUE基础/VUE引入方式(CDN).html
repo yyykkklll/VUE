@@ -1,0 +1,30 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue 第一课</title>
+    <-- 引入 Vue 3 的全局构建版本，通过 CDN 加载 -->
+    <script src="../vue.global.js"></script>
+  </head>
+
+  <body>
+    <!-- 绑定 Vue 应用的根元素 -->
+    <div id="app">{{ message }}</div>
+
+    <script>
+      // 从 Vue 对象中解构出 createApp 函数
+      const { createApp } = Vue;
+
+      // 创建一个 Vue 应用实例
+      createApp({
+        // data 是一个函数，返回一个对象，定义应用的数据
+        data() {
+          return {
+            message: "Hello, Vue!", // 这是一个响应式数据
+          }
+        },
+      })
+        // 将 Vue 应用实例“挂载”到页面上 id 为 app 的 DOM 元素上
+        .mount("#app");
+    </script>
+  </body>
+</html> 
