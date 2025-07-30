@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>双向绑定v-model</title>
+  </head>
+  <script src="../vue.global.js"></script>
+  <body>
+    <div id="app">
+      <p class="pEl">你在输入框输入了:{{message}}</p>
+      <input v-model="message" placeholder="输入点什么吧~" />
+    </div>
+    <style>
+      .pEl {
+        color: brown;
+        border: 2px solid;
+      }
+    </style>
+    <script>
+      const { createApp } = Vue;
+      const app = createApp({
+        data() {
+          return {
+            message: "",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

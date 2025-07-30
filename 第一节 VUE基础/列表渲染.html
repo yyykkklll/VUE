@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染</title>
+</head>
+<script src="../vue.global.js"></script>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="item in items" :key="item.id">{{item.name}}</li>
+    </ul>
+</div>
+<script>
+    const {createApp} = Vue;
+    const app = createApp({
+        data() {
+            return {
+                items: [
+                    {id: 9, name: '🍎 苹果'},
+                    {id: 2, name: '🍌 香蕉'},
+                    {id: 3, name: '🍊 橙子'},
+                    {id: 4, name: '🍎 苹果'},
+                    {id: 5, name: '🍌 香蕉'},
+                    {id: 9, name: '🍊 橙子'}
+                ]
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

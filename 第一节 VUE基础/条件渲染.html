@@ -3,28 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue响应式实例</title>
-    <script src="../vue.global.js"></script>
+    <title>条件渲染</title>
   </head>
+  <script src="../vue.global.js"></script>
   <body>
     <div id="app">
-      <p>计数：{{ count }}</p>
-      <button @click="increment">+1</button>
+      <p v-show="isVisible">我出现了！✨</p>
+      <button @click="isVisible = !isVisible">点击我让上面显示/消失</button>
     </div>
-
     <script>
       const { createApp } = Vue;
       const app = createApp({
         data() {
-          return { count: 0 };
+          return {
+            isVisible: true,
+          };
         },
-        methods: {
-          increment() {
-            this.count++;
-          },
-        },
-      });
-      app.mount("#app");
+      }).mount("#app");
     </script>
   </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合练习3</title>
+</head>
+<script src="../vue.global.js"></script>
+<body>
+<div id="app">
+    <input v-model="newItem" placeholder="输入事件内容">
+    <button @click="addItem">添加</button>
+    <ul>
+        <li v-for="(item, index) in todoList" :key="index">
+            {{item}}
+            <button @click="removeItem(index)">删除</button>
+        </li>
+    </ul>
+</div>
+<script>
+    const {createApp} = Vue;
+    const app = createApp({
+        data() {
+            return {
+                newItem: '',
+                todoList: []
+            }
+        },
+        methods: {
+            addItem() {
+                if (this.newItem.trim() !== '') {
+                    this.todoList.push(this.newItem);
+                    this.newItem = '';
+                }
+            },
+            removeItem(index) {
+                this.todoList.splice(index, 1);
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

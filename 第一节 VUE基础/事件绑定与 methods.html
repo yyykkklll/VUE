@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定与 methods</title>
+</head>
+<script src='../vue.global.js'></script>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+    <button @click="changeMessage">点击修改消息</button>
+</div>
+<script>
+    const {createApp} = Vue;
+    const app = createApp({
+        data() {
+            return {
+                message: 'VUE真有趣'
+            }
+        },
+        methods: {
+            changeMessage() {
+                this.message = 'VUE一点不好玩';
+            }
+        }
+    }).mount('#app')
+</script>
+</body>
+</html>

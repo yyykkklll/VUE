@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>综合练习题1</title>
+</head>
+</div>
+<script src="../vue.global.js"></script>
+<body>
+<div id="app">
+    <p>{{count}}</p>
+    <button @click='add'>+1</button>
+    <button @click='sub'>-1</button>
+<script>
+    const {createApp} = Vue;
+    const app = createApp({
+        data() {
+            return {
+                count: 0,
+            }
+        },
+        methods: {
+            add() {
+                if (this.count < 5) {
+                    this.count++;
+                } else {
+                    alert("已经大于5了！")
+                }
+            },
+            sub() {
+                if (this.count > 0) {
+                    this.count--;
+                } else {
+                    alert("已经小于0了！")
+                }
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

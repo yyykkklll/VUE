@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue列表渲染key示例</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <h3>带key的列表</h3>
+    <ul>
+        <li v-for="item in itemsWithKey" :key="item.id">
+            {{ item.name }} <input type="text" placeholder="输入测试状态保持">
+        </li>
+    </ul>
+
+    <h3>不带key的列表</h3>
+    <ul>
+        <li v-for="item in itemsWithoutKey" :key="item.id">
+            {{ item.name }} <input type="text" placeholder="输入测试状态保持">
+        </li>
+    </ul>
+
+    <button @click="reverseItems">反转列表</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            itemsWithKey: [
+                {id: 1, name: '苹果'},
+                {id: 2, name: '香蕉'},
+                {id: 3, name: '橙子'}
+            ],
+            itemsWithoutKey: [
+                {id: 1, name: '苹果'},
+                {id: 2, name: '香蕉'},
+                {id: 3, name: '橙子'}
+            ]
+        },
+        methods: {
+            reverseItems() {
+                this.itemsWithKey = [...this.itemsWithKey].reverse();
+                this.itemsWithoutKey = [...this.itemsWithoutKey].reverse();
+            }
+        }
+    });
+</script>
+</body>
+</html>
